@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background : rgba(27,27,27)
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+    /* padding-top : 5rem; */
+}
+
+.card{
+    width : 400px;
+    height: 500px;
+    margin : 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top : 3rem;
+}
+
+.card-image{
+    
+    height: 250px;
+    background-color: aqua;
+    border-radius: 10px 10px 0 0;
+}
+
+.car1{
+    background-image: url('https://akm-img-a-in.tosshub.com/indiatoday/images/story/201908/New_Creta.png?_aGOMv8iTqjtkcpKGLbSWN5fDJ2iEOJK&size=770:433');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 500px;
+}
+.car2{
+    background-image: url('https://freebiescloud.com/wp-content/uploads/2020/10/3-31.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px;
+}
+.car3{
+    background-image: url('https://www.pngplay.com/wp-content/uploads/2/Black-Scorpio-Background-PNG-Image.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px;
+}
+.card p{
+    padding : 10px;
+   
+}
+.card h2{
+    padding: 10px;
+    
+}
+
+.card a{
+    text-decoration: none;
+    background-color: rgba(27,27,27); 
+    color: #fff;
+    display: block;
+    padding : 15px 20px;
+    text-align: center;
+    margin: 20px 50px;
+}
+
+.card:hover { 
+
+}
