@@ -1,3 +1,6 @@
+<?php
+include ("auth_session.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <section class="wrapper">
         <div class="card">
             <div class="card-image car1">
@@ -15,15 +19,15 @@
             </div>
             <h2>Creta</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores corrupti veniam pariatur minus libero nemo?</p>
-            <a href="">Book now</a>
+            <a href="CarForm.php">Book now</a>
         </div>
         <div class="card">
             <div class="card-image car2">
 
             </div>
             <h2>Seltos</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo consectetur pariatur officia nesciunt quas deleniti obcaecati, temporibus distinctio, tenetur, quia dolor error?</p>
-            <a href="">Book now</a>
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo consectetur pariatur officia nesciunt quas deleniti obcaecati, temporibus distinctio, tenetur, quia dolor error?</p>
+            <a href="CarForm.php">Book now</a>
         </div>
         <div class="card">
             <div class="card-image car3">
@@ -31,7 +35,7 @@
             </div>
             <h2>Scorpio</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam repellat sunt nam magni earum veniam ut enim voluptatem quam quia?</p>
-            <a href="">Book now</a>
+            <a href="CarForm.php">Book now</a>
         </div>
         <div class="card">
             <div class="card-image car1">
@@ -39,7 +43,7 @@
             </div>
             <h2>Creta</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores corrupti veniam pariatur minus libero nemo?</p>
-            <a href="">Book now</a>
+            <a href="CarForm.php">Book now</a>
         </div>
         <div class="card">
             <div class="card-image car1">
@@ -47,7 +51,7 @@
             </div>
             <h2>Creta</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores corrupti veniam pariatur minus libero nemo?</p>
-            <a href="">Book now</a>
+            <a href="CarForm.php">Book now</a>
         </div>
         <div class="card">
             <div class="card-image car1">
@@ -55,7 +59,7 @@
             </div>
             <h2>Creta</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores corrupti veniam pariatur minus libero nemo?</p>
-            <a href="">Book now</a>
+            <a href="CarForm.php">Book now</a>
         </div>
     </section>
 </body>

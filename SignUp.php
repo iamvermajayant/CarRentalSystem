@@ -1,80 +1,50 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/Login.css">
-  <title>Document</title>
+    <meta charset="utf-8"/>
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/styles.css"/>
 </head>
-
 <body>
-  <?php
-
-  include 'db.php';
-
-  if (isset($_POST['submit'])) {
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    
-    $pass = password_hash($password, PASSWORD_BCRYPT);
-
-    $emailquery = "Select * from signup where username = '$username' ";
-    $query = mysqli_query($conn, $emailquery);
-
-    $emailcount = mysqli_num_rows($query);
-
-
-    if($emailcount > 0) {
-  ?>
-      <script>
-        alert("Email Already exists");
-      </script>
-      <?php
-    } 
-    else {
-      $insertquery = "insert into signup(username, password) values ('$username', '$pass')";
-      $iquery = mysqli_query($conn, $insertquery);
-
-      if ($iquery) {
-      ?>
-        <script>
-          alert("inserted successfully");
-        </script>
-      <?php
-      } else {
-      ?>
-        <script>
-          alert("not inserted");
-        </script>
-  <?php
-      }
-    }
-  }
-  ?>
-
-  <div class="login-box">
-    <h2>Sign Up</h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-      <div class="user-box">
-        <input type="text" name="username" required="" />
-        <label>Username</label>
-      </div>
-      <div class="user-box">
-        <input type="password" name="password" required="" />
-        <label>Password</label>
-      </div>
-      <button class="submit" href="#" type="submit" name="submit">
-        Submit
-      </button>
+<?php
+    require('db.php');
+    // When form submitted, insert values into the database.
+    if (isset($_REQUEST['username'])) {
+        // removes backslashes
+        $username = stripslashes($_REQUEST['username']);
+        //escapes special characters in a string
+        $username = mysqli_real_escape_string($con, $username);
+        $email    = stripslashes($_REQUEST['email']);
+        $email    = mysqli_real_escape_string($con, $email);
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+        $create_datetime = date("Y-m-d H:i:s");
+        $query    = "INSERT into `users` (username, password, email, create_datetime)
+                     VALUES ('$username', '" . md5($password) . "', '$email', '$create_datetime')";
+        $result   = mysqli_query($con, $query);
+        if ($result) {
+            echo "<div class='form'>
+                  <h3>You are registered successfully.</h3><br/>
+                  <p class='link'>Click here to <a href='Login.php'>Login</a></p>
+                  </div>";
+        } else {
+            echo "<div class='form'>
+                  <h3>Required fields are missing.</h3><br/>
+                  <p class='link'>Click here to <a href='SignUp.php'>Sign up</a> again.</p>
+                  </div>";
+        }
+    } else {
+?>
+    <form class="form" action="" method="post">
+        <h1 class="login-title">Registration</h1>
+        <input type="text" class="login-input" name="username" placeholder="Username" required />
+        <input type="text" class="login-input" name="email" placeholder="Email Address">
+        <input type="password" class="login-input" name="password" placeholder="Password">
+        <input type="submit" name="submit" value="Register" class="login-button">
+        <p class="link">Already have an account? <a href="login.php">Login here</a></p>
     </form>
-    <p class="signin">already registered<a href="Login.php" class="signinlink">Click here</a></p>
-  </div>
+<?php
+    }
+?>
 </body>
-
 </html>
