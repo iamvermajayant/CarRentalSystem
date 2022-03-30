@@ -33,32 +33,42 @@
 </head>
 
 <body>
-    
+
     <div class="sidenav">
+        <a href="adminDashboard.php">All Orders</a>
         <a href="AddProduct.php">Add Product</a>
         <a href="ViewProduct.php">View Product</a>
-        <a href="#clients">Clients</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact">Logout</a>
+        <a href="adminLogout.php">Logout</a>
     </div>
     <div class="container">
         <h2>Product Details</h2>
         <table>
+
             <tr>
-                <th>Company</th>
-                <th>Contact</th>
-                <th>Country</th>
+                <th>id</th>
+                <th>Car Name</th>
+                <th>Car Info</th>
+                <th>Car Image</th>
             </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-            </tr>
-            <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-            </tr>
+
+            <?php
+            require('../db.php');
+            $sql =  "select * from product";
+
+            $query = mysqli_query($con, $sql);
+            //$result = mysqli_fetch_array($query);
+
+            while ($result = mysqli_fetch_array($query)) {
+            ?>
+                <tr>
+                    <td><?php echo $result['Product_id'] ?></td>
+                    <td><?php echo $result['car_name'] ?></td>
+                    <td><?php echo $result['car_info'] ?></td>
+                    <td><img src="images/<?php echo $result['car_image'] ?> " width="100" height="100"></td>
+                </tr>
+            <?php
+            }
+            ?>
         </table>
     </div>
 </body>

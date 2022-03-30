@@ -15,7 +15,7 @@ include ("auth_session.php");
     <section class="wrapper">
         <div class="card">
             <div class="card-image car1">
-
+                <img src="./admin/ima" alt="">
             </div>
             <h2>Creta</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores corrupti veniam pariatur minus libero nemo?</p>

@@ -60,35 +60,33 @@
 <body>
     <?php
     require('../db.php');
-        if(isset($_POST['submit'])){
-            $car_name = $_POST['car_name'];
-            $Car_Info = $_POST['car_Info'];
-            $car_image = $_FILES['uploadfile']['name'];
-            $car_temp_name= $_FILES['uploadfile']['tmp_name'];
-            $folder = "images/".$car_image;
+    if (isset($_POST['submit'])) {
+        $car_name = $_POST['car_name'];
+        $Car_Info = $_POST['car_Info'];
+        $car_image = $_FILES['uploadfile']['name'];
+        $car_temp_name = $_FILES['uploadfile']['tmp_name'];
+        $folder = "images/" . $car_image;
 
-            $sql = "INSERT INTO `product` (car_name, car_info, car_image) VALUES ('$car_name', '$Car_Info', '$car_image') ";
+        $sql = "INSERT INTO `product` (car_name, car_info, car_image) VALUES ('$car_name', '$Car_Info', '$car_image') ";
 
-            mysqli_query($con, $sql);
+        mysqli_query($con, $sql);
 
-            if(move_uploaded_file($car_temp_name, $folder)){
-                echo "added successfully";
-            }
-            else{
-                echo "not added";
-            }
+        if (move_uploaded_file($car_temp_name, $folder)) {
+            echo "added successfully";
+        } else {
+            echo "not added";
         }
+    }
     ?>
     <div class="sidenav">
+        <a href="adminDashboard.php">All Orders</a>
         <a href="AddProduct.php">Add Product</a>
         <a href="ViewProduct.php">View Product</a>
-        <a href="#clients">Clients</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact">Logout</a>
+        <a href="adminLogout.php">Logout</a>
     </div>
 
     <div class="container">
-        <h3>Using CSS to style an HTML Form</h3>
+        <h3>Fill Details to add a new Car </h3>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
             <label for="fname">Car Name</label>
             <input class="Car_name" type="text" id="fname" name="car_name" placeholder="Enter Car name..">
