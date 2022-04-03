@@ -50,7 +50,7 @@
      <label for="name" id="name-label">Name</label>
      <input id="name" type="text" required placeholder="Enter your name" name="name" />
      <label for="email" id="email-label">Email</label>
-     <input id="email" type="email" required placeholder="Enter your email" name="email" />
+     <input id="email" type="text" required placeholder="Enter your email" name="email" />
      <label for="number" id="number-label">Age</label>
      <input id="number" type="number"min="18" max="60" required placeholder="Enter your Age" name="age" />
      

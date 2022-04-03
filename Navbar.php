@@ -19,9 +19,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="Cars.php">Cars</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="Booking.php">Booking</a></li>
                 <?php if(!isset($_SESSION['username'])){
                     echo "<li id=\"login\"><a href=\"Login.php\" >Login</a></li>
                     <li id=\"signup\"><a href=\"SignUp.php\">Signup</a></li>";
@@ -39,9 +39,9 @@
             <div class="bar2"></div>
             <div class="bar3"></div>
             <ul class="mobile-view">
-                <li><a href="">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="Cars.php">cars</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="Booking.php">Booking</a></li>
                 <li id="login"><a href="Login.php">Login</a></li>
                 <li id="signup"><a href="SignUp.php">Signup</a></li>
             </ul>

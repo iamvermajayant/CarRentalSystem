@@ -1,6 +1,3 @@
-<?php
-include ("auth_session.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +6,11 @@ include ("auth_session.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Cars.css">
     <title>Document</title>
+    <?php
+require("auth_session.php");
+require('Navbar.php');
+
+?>
 </head>
 <body>
     
