@@ -54,12 +54,21 @@ li:hover {
    
 .one{
     height: 100vh;
-    background-color:#0E1924;
+    background-color:#1f1f1f;
 }
 
 .two{
-    background-color: salmon;
+    background-color: #1f1f1f;
     height: 100vh;
+    display: flex;
+    flex-direction: row;
+    width: 80%;    
+}
+
+.info-wrapper{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
 }
 
  /* backdrop-filter: blur(3px) saturate(106%);
